@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
-    "test": "npm-run-all --parallel lint karma:once --sequential build",
+    "test": "npm-run-all --parallel karma:once --sequential build",
     "serve": "webpack-dev-server --host 0.0.0.0 --hot --inline --history-api-fallback",
     "start": "npm-run-all --parallel karma:dev serve",
     "karma:once": "karma start --single-run",
@@ -39,6 +39,7 @@
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-class-properties": "^6.19.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
@@ -64,19 +65,19 @@
     "mocha-multi": "^0.10.0",
     "mocha-osx-reporter": "^0.1.2",
     "npm-run-all": "^4.0.1",
-    "prop-types": "^15.5.9",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "preact": "^8.1.0",
     "rimraf": "^2.5.4",
     "sinon": "2.0.0-pre",
     "wallaby-webpack": "^0.0.30",
     "webpack": "1.x",
     "webpack-dev-server": "^1.16.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "preact-compat": "^3.16.0",
+    "preact-test-utils": "^0.1.3"
+  },
   "peerDependencies": {
-    "prop-types": "^15.5.9",
-    "react": "^15.5.9",
-    "react-dom": "^15.5.9"
+    "preact": "^8.1.0"
   }
 }

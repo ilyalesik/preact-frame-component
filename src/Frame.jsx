@@ -1,6 +1,6 @@
+import { h } from 'preact';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import DocumentContext from './DocumentContext';
 
 const hasConsole = typeof window !== 'undefined' && window.console;
@@ -27,18 +27,6 @@ export default class Frame extends Component {
   // also inject into the body and can mess up React. For this reason
   // initialContent is expected to have a div inside of the body
   // element that we render react into.
-  static propTypes = {
-    style: PropTypes.object, // eslint-disable-line
-    head: PropTypes.node,
-    initialContent: PropTypes.string,
-    mountTarget: PropTypes.string,
-    contentDidMount: PropTypes.func,
-    contentDidUpdate: PropTypes.func,
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.arrayOf(PropTypes.element)
-    ])
-  };
 
   static defaultProps = {
     style: {},
